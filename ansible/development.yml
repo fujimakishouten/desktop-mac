@@ -1,5 +1,5 @@
 - hosts: all
-  become: yes
+  become: no 
   roles:
     - docker
     - jetbrains
