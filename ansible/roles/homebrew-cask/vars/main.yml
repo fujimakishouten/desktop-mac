@@ -1,3 +1,31 @@
 packages:
-  - 
+  - adobe-creative-cloud
+  - android-studio
+  - apache-directory-studio
+  - astah-professional
+  - atom
+  - bluefish
+  - brackets
+  - chromium
+  - clion
+  - firefox
+  - franz
+  - geany
+  - intellij-idea
+  - java
+  - jedit
+  - macvim
+  - meld
+  - owasp-zap
+  - pilemd
+  - rider
+  - skype
+  - synergy
+  - sublime-text
+  - thunderbird
+  - visual-studio-code
+  - vlc
+  - vivaldi
+  - xmind
+  - yubico-yubikey-personalization-gui
 

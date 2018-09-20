@@ -1,5 +1,6 @@
 packages:
   - ansible
+  - apache-drill
   - awscli
   - axel
   - brotli
@@ -28,6 +29,7 @@ packages:
   - mercurial
   - mosh
   - nkf
+  - neovim
   - ocaml
   - opam
   - pandoc
