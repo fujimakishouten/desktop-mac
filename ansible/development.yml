@@ -2,7 +2,8 @@
   become: yes
   roles:
     - docker
-    - nave 
+    - jetbrains
+    - nave
     - php
     - virtualbox
     - wireshark

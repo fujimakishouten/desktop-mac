@@ -1,6 +1,5 @@
 packages:
   - adobe-creative-cloud
-  - android-studio
   - apache-directory-studio
   - astah-professional
   - atom
@@ -11,14 +10,12 @@ packages:
   - firefox
   - franz
   - geany
-  - intellij-idea
   - java
   - jedit
   - macvim
   - meld
   - owasp-zap
   - pilemd
-  - rider
   - skype
   - synergy
   - sublime-text

@@ -1,0 +1,13 @@
+- name: Install packages
+  homebrew_cask:
+    name: "{{item}}"
+    state: upgraded 
+    update_homebrew: yes
+    upgrade_all: yes
+  with_items:
+    - android-studio
+    - clion
+    - intellij-idea
+    - kotlin
+    - rider
+
