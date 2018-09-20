@@ -1,6 +1,5 @@
 packages:
   - ansible
-  - apache-drill
   - awscli
   - axel
   - brotli

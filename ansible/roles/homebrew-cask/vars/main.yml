@@ -1,7 +1,6 @@
 packages:
-  - adobe-creative-cloud
   - apache-directory-studio
-  - astah-professional
+#  - astah-professional
   - atom
   - bluefish
   - brackets
@@ -10,7 +9,7 @@ packages:
   - firefox
   - franz
   - geany
-  - java
+#  - java
   - jedit
   - macvim
   - meld
@@ -24,5 +23,4 @@ packages:
   - vlc
   - vivaldi
   - xmind
-  - yubico-yubikey-personalization-gui
 

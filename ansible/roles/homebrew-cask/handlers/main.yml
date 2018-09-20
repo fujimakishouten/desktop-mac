@@ -1,0 +1,6 @@
+- name: restart dock 
+  command: |
+    killall Dock 
+  become: yes
+  become_user: root
+

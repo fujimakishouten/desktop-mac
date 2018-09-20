@@ -1,0 +1,6 @@
+- name: restart finder
+  command: |
+    killall Finder
+  become: yes
+  become_user: root
+

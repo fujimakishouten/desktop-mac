@@ -1,8 +1,16 @@
+- name: Upgrade existing packages
+  homebrew_cask:
+    upgrade_all: yes
+
 - name: Install packages
   homebrew_cask:
     name: "{{item}}"
     state: upgraded 
     update_homebrew: yes
-    upgrade_all: yes
   with_items: "{{packages}}"
+
+- name: Reset Launchpad order
+  command: |
+    defaults write com.apple.dock ResetLaunchPad -bool true
+  notify: restart dock
 

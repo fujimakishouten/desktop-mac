@@ -1,3 +1,10 @@
+- name: Change to show hidden files
+  command: |
+      defaults write com.apple.finder AppleShowAllFiles TRUE
+  become: yes
+  become_user: root
+  notify: restart finder
+
 - name: Check if homebrew installed
   stat:
     path: /usr/local/bin/brew
@@ -6,4 +13,12 @@
 - name: Install homebrew
   command: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   when: not homebrew.stat.exists
+
+- name: Tap repositories
+  homebrew_tap:
+    name: "{{item}}"
+    state: present
+  with_items:
+    - homebrew/cask-versions
+
 
