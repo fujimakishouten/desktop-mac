@@ -1,9 +1,16 @@
-- name: Change to show hidden files
-  command: |
-      defaults write com.apple.finder AppleShowAllFiles TRUE
+- name: System settings
+  block:
+    - name: Disable create .DS_Store file on network drive
+      command: |
+        defaults write com.apple.desktopservices DSDontWriteNetworkStores True
+      notify: restart finder
+
+    - name: Change to show hidden files
+      command: |
+        defaults write com.apple.finder AppleShowAllFiles TRUE
+      notify: restart finder
   become: yes
   become_user: root
-  notify: restart finder
 
 - name: Check if homebrew installed
   stat:
@@ -20,5 +27,4 @@
     state: present
   with_items:
     - homebrew/cask-versions
-
 
