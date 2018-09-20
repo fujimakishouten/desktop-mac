@@ -1,0 +1,9 @@
+- hosts: all
+  become: yes
+  roles:
+    - docker
+    - nave 
+    - php
+    - virtualbox
+    - wireshark
+

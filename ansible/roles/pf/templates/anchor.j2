@@ -1,0 +1,26 @@
+#
+# {{domain.split('.') | reverse | join('.')}} ruleset, referred to by the default /etc/pf.conf file.
+# See notes in that file regarding the anchor point in the main ruleset.
+#
+# Copyright (c) 2018 {{domain}}. All rights reserved.
+#
+# Options 
+set block-policy drop
+
+# Normalization
+scrub in all
+
+# Filtering
+block in log all
+set skip on lo0
+pass out all keep state
+pass in proto icmp all
+pass in proto tcp to any port 22
+pass in proto tcp to any port 5901
+pass in proto tcp to any port 10022
+pass in proto udp to any port 500
+pass in proto udp to any port 4500
+pass in proto udp to any port 5901
+pass in proto udp to any port 60000
+pass in proto udp to any port 60022
+

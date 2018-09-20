@@ -1,0 +1,26 @@
+- name: Setup Packet Filter
+  block:
+    - name: Copy anchors
+      template:
+        src: "anchor.j2"
+        dest: "/etc/pf.anchors/{{domain.split('.') | reverse | join('.')}}"
+        backup: yes
+
+    - name: Copy pf.conf
+      template:
+        src: "pf.conf.j2"
+        dest: /etc/pf.conf
+        backup: yes
+
+    - name: Copy LaunchDaemons service
+      template:
+        src: "service.plist.j2"
+        dest: "/Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.pfctl.plist"
+        backup: yes
+
+    - name: Add pf to startup
+      command: |
+        launchctl load -w /Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.pfctl.plist
+  become: yes
+  become_user: root
+

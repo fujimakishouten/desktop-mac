@@ -1,0 +1,9 @@
+- name: Install wireshark 
+  homebrew_cask:
+    name: "{{item}}"
+    state: upgraded 
+    update_homebrew: yes
+    upgrade_all: yes
+  with_items:
+    - wireshark
+

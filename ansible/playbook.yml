@@ -1,0 +1,6 @@
+- include: common.yml
+- include: laptop.yml
+- include: vaioz.yml
+- include: development.yml
+- include: ssh.yml
+
