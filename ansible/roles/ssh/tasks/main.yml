@@ -5,9 +5,11 @@
         src: ssh.plist
         dest: /Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.ssh.plist
         backup: yes
+
     - name: Unload ssh service 
       command: |
         launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+
     - name: Load ssh service
       command: |
         launchctl load -w /Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.ssh.plist
