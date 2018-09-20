@@ -18,7 +18,11 @@
         dest: "/Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.pfctl.plist"
         backup: yes
 
-    - name: Add pf to startup
+    - name: Unload pfctl service
+      command: |
+        launchctl unload -w /System/Library/LaunchDaemons/com.apple.pfctl.plist
+
+    - name: Load pfctl service
       command: |
         launchctl load -w /Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.pfctl.plist
   become: yes
