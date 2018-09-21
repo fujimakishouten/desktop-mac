@@ -2,6 +2,46 @@
   homebrew_cask:
     upgrade_all: yes
 
+- name: Check if Java installed
+  shell: |
+    ls /Library/Java/JavaVirtualMachines | wc -l | tr -d " "
+  register: java
+
+- name: Fail if Java is not installed
+  block:
+    - name: Please install Java
+      debug:
+        msg:
+          - Java is not installed.
+          - Execute the following command to install Java.
+          - ""
+          - brew cask install java
+
+    - name: Fail if Java is not installed
+      fail:
+        msg: Java is not exists
+  when: java.stdout == "0"
+
+- name: Check if astah* professional installed
+  stat:
+    path: /Applications/astah professional
+  register: astah
+
+- name: Fail if astha* professional is not installed
+  block:
+    - name: Please install astha* professional
+      debug:
+        msg:
+          - astah* professional is not installed.
+          - Execute the following command to install astah professioanl.
+          - ""
+          - brew cask install astah-professioanl
+
+    - name: Fail if astah* professioan is nota installed
+      fail:
+        msg: astah* professioal is not exists
+  when: not astah.stat.exists
+
 - name: Install packages
   homebrew_cask:
     name: "{{item}}"
