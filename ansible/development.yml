@@ -5,6 +5,6 @@
     - jetbrains
     - nave
     - php
-    - virtualbox
-    - wireshark
+    #- virtualbox
+    #- wireshark
 
