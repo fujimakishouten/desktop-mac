@@ -12,13 +12,23 @@
   become: yes
   become_user: root
 
-- name: Check if homebrew installed
+- name: Check if Homebrew installed
   stat:
     path: /usr/local/bin/brew
   register: homebrew
 
-- name: Install homebrew
-  command: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+- name: Fail if Homebrew is not installed
+  block:
+    - name: Please install Homebrew
+      debug:
+        msg:
+          - Homebrew is not installed.
+          - Execute the following command to install Homebrew.
+          - '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
+
+    - name: Fail if Homebrew is not installed
+      fail:
+        msg: "Homebrew is not installed"
   when: not homebrew.stat.exists
 
 - name: Tap repositories
