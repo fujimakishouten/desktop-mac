@@ -24,11 +24,12 @@
         msg:
           - Homebrew is not installed.
           - Execute the following command to install Homebrew.
+          - ""
           - '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
 
     - name: Fail if Homebrew is not installed
       fail:
-        msg: "Homebrew is not installed"
+        msg: Homebrew is not installed
   when: not homebrew.stat.exists
 
 - name: Tap repositories
