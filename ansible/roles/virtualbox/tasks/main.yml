@@ -1,8 +1,27 @@
-- name: Install virtualbox 
+- name: Check if VirtualBox installed
+  stat:
+    path: /usr/local/bin/VBoxManage 
+  register: virtualbox
+
+- name: Fail if VirtualBox is not installed
+  block:
+    - name: Please install Virtualbox
+      debug:
+        msg:
+          - Virtualbox is not installed.
+          - Execute the following command to install Virtualbox.
+          - "" 
+          - brew cask install virtualbox
+
+    - name: Fail if Virtualbox is not installed
+      fail:
+        msg: Virtualbox is not installed
+  when: not virtualbox.stat.exists
+
+- name: Install VirtualBox 
   homebrew_cask:
     name: "{{item}}"
-    state: upgraded 
-    update_homebrew: yes
+    state: upgraded
   with_items:
     - vagrant
     - virtualbox
