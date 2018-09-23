@@ -5,6 +5,7 @@
     update_homebrew: yes
   with_items:
     - android-studio
+    - appcode
     - clion
     - intellij-idea
     - kotlin
