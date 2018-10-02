@@ -1,0 +1,39 @@
+server:
+    ### Process
+    username: "{{username}}"
+
+    ### Access control
+    interface: 0.0.0.0
+    do-ip6: no
+    do-not-query-localhost: no
+    access-control: 127.0.0.1/32 allow
+    # access-control: 0.0.0.0/0 allow
+    # access-control: 10.0.0.0/8 allow
+    # access-control: 172.16.0.0/12 allow
+    # access-control: 192.168.0.0/16 allow
+
+    ### Cache
+    cache-max-ttl: 300
+
+    ### Local zone
+    # local-zone: <zone> <type>
+    # type
+    #     deny
+    #     refuse
+    #     static
+    #     transparent
+    #     typetransparent
+    #     redirect
+    #     nodefault
+    #
+    # Example
+    #     loal-zone: "local." static
+    #
+
+    ### Local data
+    # local-data: <resource record string>
+    #
+    # Examples:
+    #     local-data: "example.local. A 127.0.0.1"
+    #
+
