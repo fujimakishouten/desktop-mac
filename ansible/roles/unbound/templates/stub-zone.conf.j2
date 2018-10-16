@@ -1,0 +1,18 @@
+### stub-zone.conf
+#
+# Example
+#
+# stub-zone:
+#    name: "example.com"
+#    stub-addr: 127.0.0.1@10053
+#
+
+### Stub zone
+server:
+{% for domain in domains %}
+#    stub-zone:
+#        name: "{{ domain }}"
+#        stub-addr: {{ stub.addr }}
+#
+{% endfor %}
+

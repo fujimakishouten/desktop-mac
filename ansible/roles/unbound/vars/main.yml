@@ -1,3 +1,6 @@
 domain: fujimakishouten.com
 username: kazuma
-
+stub:                                                                                                                                                           
+  addr: 127.0.0.1@10053
+domains:
+    - fujimakishouten.com
