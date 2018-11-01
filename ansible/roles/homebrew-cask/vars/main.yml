@@ -4,10 +4,11 @@ packages:
   - atom
   - bluefish
   - brackets
-  - chromium
+#  - chromium
   - firefox
   - franz
   - geany
+  - google-chrome
 #  - java
   - jedit
   - macvim
