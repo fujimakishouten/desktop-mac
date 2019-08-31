@@ -21,6 +21,7 @@ packages:
   - jp2a
   - jq
   - lame
+  - ldns
   - lhasa
   - lzip
   - lua
