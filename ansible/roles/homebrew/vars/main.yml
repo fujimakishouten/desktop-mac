@@ -8,6 +8,7 @@ packages:
   - colordiff
   - convmv
   - ctop
+  - dep
   - direnv
   - git
   - git-secret
