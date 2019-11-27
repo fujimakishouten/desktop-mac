@@ -1,0 +1,9 @@
+packages:
+  - bzr
+  - bzr-xmloutput
+  - git
+  - git-lfs
+  - git-secret
+  - mercurial
+  - subversion
+
