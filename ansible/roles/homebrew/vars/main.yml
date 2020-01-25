@@ -7,6 +7,7 @@ packages:
   - convmv
   - ctop
   - direnv
+  - fzf
   - global
   - graphicsmagick
   - grc
@@ -24,6 +25,7 @@ packages:
   - pandoc
   - pbzip2
   - peco
+  - pet
   - pwgen
   - rlwrap
   - screen
