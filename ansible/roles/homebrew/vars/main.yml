@@ -13,6 +13,7 @@ packages:
   - grc
   - htop
   - ipcalc
+  - iproute2mac
   - jp2a
   - jq
   - lame
