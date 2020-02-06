@@ -16,6 +16,7 @@ packages:
   - global
   - graphicsmagick
   - grc
+  - gnu-getopt
   - gnu-sed
   - gnu-tar
   - grep
@@ -29,6 +30,7 @@ packages:
   - ldns
   - lhasa
   - lzip
+  - moreutils
   - mosh
   - nkf
   - neovim
