@@ -2,15 +2,24 @@ packages:
   - ansible
   - awscli
   - axel
+  - binutils
   - brotli
   - colordiff
   - convmv
+  - coreutils
   - ctop
+  - diffutils
   - direnv
+  - findutils
   - fzf
+  - gawk
   - global
   - graphicsmagick
   - grc
+  - gnu-sed
+  - gnu-tar
+  - grep
+  - gzip
   - htop
   - ipcalc
   - iproute2mac
