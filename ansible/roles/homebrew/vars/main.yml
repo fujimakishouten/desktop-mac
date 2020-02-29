@@ -3,6 +3,7 @@ packages:
   - awscli
   - axel
   - binutils
+  - bat
   - brotli
   - colordiff
   - convmv
@@ -11,6 +12,8 @@ packages:
   - diffutils
   - direnv
   - findutils
+  - exa
+  - fd
   - fzf
   - gawk
   - global
@@ -29,6 +32,7 @@ packages:
   - lame
   - ldns
   - lhasa
+  - lsd
   - lzip
   - moreutils
   - mosh
@@ -39,8 +43,10 @@ packages:
   - peco
   - pet
   - pwgen
+  - ripgrep
   - rlwrap
   - screen
+  - sd
   - sl
   - telnet
   - tmux
