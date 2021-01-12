@@ -9,6 +9,7 @@ packages:
   - franz
   - geany
   - google-chrome
+  - hyperswitch
 #  - java
   - jedit
   - macvim

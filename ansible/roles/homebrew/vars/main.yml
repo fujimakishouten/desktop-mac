@@ -12,6 +12,7 @@ packages:
   - diffutils
   - direnv
   - findutils
+  - envchain
   - exa
   - fd
   - fzf

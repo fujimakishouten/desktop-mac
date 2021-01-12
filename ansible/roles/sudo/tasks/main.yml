@@ -1,0 +1,6 @@
+- name: Enable TouchID
+  copy:
+    src: sudo
+    dest: /etc/pam.d/sudo
+    backup: yes
+
