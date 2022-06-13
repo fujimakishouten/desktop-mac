@@ -25,6 +25,7 @@ packages:
   - gnu-tar
   - grep
   - gzip
+  - hexyl
   - htop
   - ipcalc
   - iproute2mac
