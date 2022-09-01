@@ -5,18 +5,24 @@ packages:
   - binutils
   - bat
   - brotli
+  - cmake
   - colordiff
   - convmv
   - coreutils
   - ctop
   - diffutils
   - direnv
-  - findutils
+  - emacs
   - envchain
   - exa
+  - findutils
+  - flock
   - fd
   - fzf
   - gawk
+  - git
+  - git-lfs
+  - git-secret
   - global
   - graphicsmagick
   - grc
@@ -38,26 +44,32 @@ packages:
   - lzip
   - moreutils
   - mosh
-  - nkf
   - neovim
+  - nkf
+  - pass
   - pandoc
   - pbzip2
   - peco
   - pet
+  - prettyping
   - pwgen
   - ripgrep
   - rlwrap
   - screen
   - sd
   - sl
+  - sqlite
   - telnet
+  - tig
   - tmux
   - tor
   - trash-cli
   - tree
   - unar
-  - unrar
   - w3m
+  - whois
   - yubikey-personalization
+  - zsh-autosuggestions
+  - zsh-completions
   - zstd
 

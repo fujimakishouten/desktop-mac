@@ -13,9 +13,16 @@
   become_user: root
 
 - name: Check if Homebrew installed
-  stat:
-    path: /usr/local/bin/brew
-  register: homebrew
+  block:
+    - name: Check for Intel Mac
+      stat:
+        path: /usr/local/bin/brew
+      register: homebrew
+    - name: Check for M1 mac
+      stat:
+        path: /opt/homebrew/bin/brew
+      register: homebrew
+      when: not homebrew.stat.exists
 
 - name: Fail if Homebrew is not installed
   block:
@@ -37,6 +44,7 @@
     name: "{{item}}"
     state: present
   with_items:
+    - homebrew/cask-fonts
     - homebrew/cask-versions
     - knqyf263/pet
 
