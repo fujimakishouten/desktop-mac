@@ -1,5 +1,6 @@
 packages:
   - ansible
+  - ast-grep
   - awscli
   - axel
   - binutils
