@@ -1,8 +1,8 @@
 packages:
   - ansible
+  - aria2
   - ast-grep
   - awscli
-  - axel
   - binutils
   - bat
   - brotli
