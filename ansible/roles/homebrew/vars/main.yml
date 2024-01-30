@@ -15,7 +15,7 @@ packages:
   - direnv
   - emacs
   - envchain
-  - exa
+  - eza
   - findutils
   - flock
   - fd
