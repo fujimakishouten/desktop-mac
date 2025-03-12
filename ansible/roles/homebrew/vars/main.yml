@@ -54,6 +54,7 @@ packages:
   - pet
   - prettyping
   - pwgen
+  - rclone
   - ripgrep
   - rlwrap
   - screen
