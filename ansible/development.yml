@@ -1,15 +1,14 @@
-- hosts: all
-  become: no
+---
+- hosts: "all"
+  become: "no"
   roles:
-    - docker
-    - golang
-    - jetbrains
-    - lua
-    - nave
-    - ocaml
-    - php
-    - python
-    - vcs
-    #- virtualbox
-    #- wireshark
-
+    - "docker"
+    - "golang"
+    - "jetbrains"
+    - "lua"
+    - "nave"
+    - "ocaml"
+    - "php"
+    - "python"
+    - "vcs"
+    - "wireshark"

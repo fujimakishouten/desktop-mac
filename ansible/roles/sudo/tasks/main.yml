@@ -1,6 +1,6 @@
-- name: Enable TouchID
+---
+- name: "Enable TouchID"
   copy:
-    src: sudo
-    dest: /etc/pam.d/sudo
-    backup: yes
-
+    src: "sudo_local"
+    dest: "/etc/pam.d/sudo_local"
+    backup: true

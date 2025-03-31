@@ -1,50 +1,50 @@
-- name: System settings
+---
+- name: "System settings"
   block:
-    - name: Disable create .DS_Store file on network drive
+    - name: "Disable create .DS_Store file on network drive"
       command: |
         defaults write com.apple.desktopservices DSDontWriteNetworkStores True
-      notify: restart finder
+      notify: "restart finder"
 
-    - name: Change to show hidden files
+    - name: "Change to show hidden files"
       command: |
         defaults write com.apple.finder AppleShowAllFiles TRUE
-      notify: restart finder
-  become: yes
-  become_user: root
+      notify: "restart finder"
+  become: true
+  become_user: "root"
 
-- name: Check if Homebrew installed
+- name: "Check if Homebrew installed"
   block:
-    - name: Check for Intel Mac
+    - name: "Check for Intel Mac"
       stat:
-        path: /usr/local/bin/brew
-      register: homebrew
-    - name: Check for M1 mac
+        path: "/usr/local/bin/brew"
+      register: "homebrew"
+    - name: "Check for M1 mac"
       stat:
-        path: /opt/homebrew/bin/brew
-      register: homebrew
-      when: not homebrew.stat.exists
+        path: "/opt/homebrew/bin/brew"
+      register: "homebrew"
+      when: "not homebrew.stat.exists"
 
-- name: Fail if Homebrew is not installed
+- name: "Fail if Homebrew is not installed"
   block:
-    - name: Please install Homebrew
+    - name: "Please install Homebrew"
       debug:
         msg:
-          - Homebrew is not installed.
-          - Execute the following command to install Homebrew.
+          - "Homebrew is not installed."
+          - "Execute the following command to install Homebrew."
           - ""
           - '/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"'
 
-    - name: Fail if Homebrew is not installed
+    - name: "Fail if Homebrew is not installed"
       fail:
-        msg: Homebrew is not installed
-  when: not homebrew.stat.exists
+        msg: "Homebrew is not installed"
+  when: "not homebrew.stat.exists"
 
-- name: Tap repositories
+- name: "Tap repositories"
   homebrew_tap:
     name: "{{item}}"
-    state: present
+    state: "present"
   with_items:
-    - homebrew/cask-fonts
-    - homebrew/cask-versions
-    - knqyf263/pet
-
+    - "homebrew/cask-fonts"
+    - "homebrew/cask-versions"
+    - "knqyf263/pet"

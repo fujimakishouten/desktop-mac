@@ -1,5 +1,3 @@
+---
 packages:
-  - dep
   - golang
-  - go-bindata
-

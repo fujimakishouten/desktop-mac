@@ -1,63 +1,63 @@
-- name: Install unbound
+---
+- name: "Install unbound"
   homebrew:
-    name: "{{item}}"
-    state: latest
-    update_homebrew: yes
-    upgrade_all: yes
-  with_items:
-    - unbound
+    name:
+      - "unbound"
+    state: "latest"
+    update_homebrew: true
+    upgrade_all: true
 
-- name: Copy unbound.conf
+- name: "Copy unbound.conf"
   copy:
-    src: unbound.conf
-    dest: /usr/local/etc/unbound/unbound.conf
-    backup: yes
+    src: "unbound.conf"
+    dest: "/usr/local/etc/unbound/unbound.conf"
+    backup: true
 
-- name: Unsure unbound.conf.d directory
+- name: "Unsure unbound.conf.d directory"
   file:
-    path: /usr/local/etc/unbound/unbound.conf.d
-    state: directory
+    path: "/usr/local/etc/unbound/unbound.conf.d"
+    state: "directory"
 
-- name: Copy unbound settings
+- name: "Copy unbound settings"
   copy:
     src: "./unbound.conf.d/{{item}}"
-    dest: /usr/local/etc/unbound/unbound.conf.d/{{item}}
-    backup: yes
+    dest: "/usr/local/etc/unbound/unbound.conf.d/{{item}}"
+    backup: true
   with_items:
-    - local-data.conf
-    - local-zone.conf
-    - qname-minimisation.conf
-    - root-auto-trust-anchor-file.conf
+    - "local-data.conf"
+    - "local-zone.conf"
+    - "qname-minimisation.conf"
+    - "root-auto-trust-anchor-file.conf"
 
-- name: Copy unbound server setting
+- name: "Copy unbound server setting"
   template:
     src: "{{item}}.j2"
-    dest: /usr/local/etc/unbound/unbound.conf.d/{{item}}
-    backup: yes
+    dest: "/usr/local/etc/unbound/unbound.conf.d/{{item}}"
+    backup: true
   with_items:
-    - server.conf
+    - "server.conf"
 
-- name: Unsure trust anchor file directory
+- name: "Unsure trust anchor file directory"
   file:
-    path: /usr/local/var/lib/unbound
-    state: directory
+    path: "/usr/local/var/lib/unbound"
+    state: "directory"
 
-- name: Copy trust anchor file
+- name: "Copy trust anchor file"
   copy:
-    src: root.key
-    dest: /usr/local/var/lib/unbound/root.key
+    src: "root.key"
+    dest: "/usr/local/var/lib/unbound/root.key"
 
-- name: Auto start unbound
+- name: "Auto start unbound"
   block:
-    - name: Copy LaunchDaemons service
+    - name: "Copy LaunchDaemons service"
       template:
-        src: unbound.plist.j2
-        dest: /Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.unbound.plist
-        backup: yes
+        src: "unbound.plist.j2"
+        dest: "/Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.unbound.plist"
+        backup: true
 
-    - name: Load unbound service
+    - name: "Load unbound service"
       command: |
         launchctl load -w /Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.unbound.plist
-  become: yes
-  become_user: root
+  become: true
+  become_user: "root"
 

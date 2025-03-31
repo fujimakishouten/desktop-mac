@@ -1,19 +1,19 @@
-- name: Install PHP 
+---
+- name: "Install PHP"
   homebrew:
     name: "{{item}}"
-    state: latest
-    update_homebrew: yes
-    upgrade_all: yes
+    state: "latest"
+    update_homebrew: true
+    upgrade_all: true
   with_items:
-    - composer
-    - php
-    - php-code-sniffer
-    - php-cs-fixer
-    - phplint
+    - "composer"
+    - "php"
+    - "php-code-sniffer"
+    - "php-cs-fixer"
+    - "phplint"
 
-- name: Copy php.ini
+- name: "Copy php.ini"
   copy:
-    src: php.ini
-    dest: /usr/local/etc/php/php.ini
-    backup: yes
-
+    src: "php.ini"
+    dest: "/usr/local/etc/php/php.ini"
+    backup: true

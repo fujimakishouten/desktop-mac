@@ -1,22 +1,9 @@
-- name: Install packages
-  homebrew:
-    name:
-      - kotlin
-    state: latest
-    update_homebrew: yes
-    upgrade_all: yes
-
-- name: Install packages
+---
+- name: "Install packages"
   homebrew_cask:
     name: "{{packages}}"
-    state: upgraded
-    update_homebrew: yes
+    state: "upgraded"
+    update_homebrew: true
   vars:
     packages:
-      - android-studio
-      - appcode
-      - clion
-      - intellij-idea
-      - kotlin-native
-      - rider
-
+      - "jetbrains-toolbox"

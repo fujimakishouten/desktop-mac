@@ -1,7 +1,6 @@
-- name: Install docker
+---
+- name: "Install docker"
   homebrew_cask:
-    name: "{{item}}"
-    state: upgraded 
-    update_homebrew: yes
-  with_items:
-    - docker 
+    name: "docker"
+    state: "upgraded "
+    update_homebrew: true

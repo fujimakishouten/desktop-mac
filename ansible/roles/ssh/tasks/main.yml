@@ -1,18 +1,18 @@
-- name: Change SSH port
+---
+- name: "Change SSH port"
   block:
-    - name: Copy LaunchDaemons service 
+    - name: "Copy LaunchDaemons service"
       template:
-        src: ssh.plist
+        src: "ssh.plist"
         dest: /Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.ssh.plist
-        backup: yes
+        backup: true
 
-    - name: Unload ssh service 
+    - name: "Unload ssh service"
       command: |
-        launchctl unload -w /System/Library/LaunchDaemons/ssh.plist
+        launchctl unload -w "/System/Library/LaunchDaemons/ssh.plist"
 
-    - name: Load ssh service
+    - name: "Load ssh service"
       command: |
         launchctl load -w /Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.ssh.plist
-  become: yes
-  become_user: root
-
+  become: true
+  become_user: "root"

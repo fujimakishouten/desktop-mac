@@ -1,9 +1,9 @@
+---
 packages:
-  - bzr
-  - bzr-xmloutput
-  - git
-  - git-lfs
-  - git-secret
-  - mercurial
-  - subversion
-
+  - "bzr"
+  - "bzrxmloutput"
+  - "git"
+  - "gitlfs"
+  - "git-secet"
+  - "mercurial"
+  - "subversio"

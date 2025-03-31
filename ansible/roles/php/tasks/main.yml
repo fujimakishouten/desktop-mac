@@ -1,8 +1,8 @@
-- name: Copy php.ini
+---
+- name: "Copy php.ini"
   copy:
-    src: php.ini
-    dest: /etc/php.ini
-    backup: yes
-  become: yes
-  become_user: root
-
+    src: "php.ini"
+    dest: "/etc/php.ini"
+    backup: true
+  become: true
+  become_user: "root"

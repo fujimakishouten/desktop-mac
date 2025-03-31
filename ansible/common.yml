@@ -1,8 +1,8 @@
-- hosts: all
-  become: no
+---
+- hosts: "all"
+  become: "no"
   roles:
-    - sudo
-    - homebrew
-    - homebrew-cask
-    - pf
-
+    - "sudo"
+    - "homebrew"
+    - "homebrew-cask"
+    - "pf"

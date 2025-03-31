@@ -1,7 +1,9 @@
-- name: Install packages
+---
+- name: "Install packages"
   homebrew:
-    name: "{{packages}}"
-    state: latest
-    update_homebrew: yes
-    upgrade_all: yes
-
+    name:
+      - "lua"
+      - "luajit"
+    state: "latest"
+    update_homebrew: true
+    upgrade_all: true
