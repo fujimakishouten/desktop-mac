@@ -26,6 +26,7 @@ packages:
   - "git-lfs"
   - "git-secret"
   - "global"
+  - "glow"
   - "graphicsmagick"
   - "grc"
   - "gnu-getopt"
