@@ -4,7 +4,7 @@
     - name: "Copy LaunchDaemons service"
       template:
         src: "ssh.plist"
-        dest: /Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.ssh.plist
+        dest: "/Library/LaunchDaemons/{{domain.split('.') | reverse | join('.')}}.ssh.plist"
         backup: true
 
     - name: "Unload ssh service"

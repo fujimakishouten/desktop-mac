@@ -6,4 +6,4 @@ packages:
   - "gitlfs"
   - "git-secet"
   - "mercurial"
-  - "subversio"
+  - "subversion"

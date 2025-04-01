@@ -1,2 +1,1 @@
-/Users/miki/bin/shm.sh
-
+$HOME/bin/shm.sh

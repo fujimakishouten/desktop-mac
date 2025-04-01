@@ -8,4 +8,3 @@ if [ ! -d /Volumes/shm ]; then
     SHM=`hdid -nomount ram://${SECTORS}`
     diskutil erasedisk apfs shm $SHM
 fi
-

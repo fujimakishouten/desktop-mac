@@ -51,7 +51,7 @@ packages:
   - "pass"
   - "pandoc"
   - "pbzip2"
-  - "peco
+  - "peco"
   - "pet"
   - "prettyping"
   - "pwgen"

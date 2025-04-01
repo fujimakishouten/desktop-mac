@@ -1,9 +1,6 @@
 ---
 - name: "Install packages"
   homebrew_cask:
-    name: "{{packages}}"
+    name: "jetbrains-toolbox"
     state: "upgraded"
     update_homebrew: true
-  vars:
-    packages:
-      - "jetbrains-toolbox"

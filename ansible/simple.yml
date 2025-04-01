@@ -2,7 +2,5 @@
 - hosts: "all"
   become: false
   roles:
-    - "sudo"
     - "homebrew"
-    - "homebrew-cask"
     - "pf"
