@@ -57,6 +57,7 @@ packages:
   - "prettyping"
   - "pwgen"
   - "rclone"
+  - "rdap"
   - "ripgrep"
   - "rlwrap"
   - "screen"
