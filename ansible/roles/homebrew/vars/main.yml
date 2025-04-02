@@ -23,6 +23,7 @@ packages:
   - "fzf"
   - "gawk"
   - "git"
+  - "git-delta"
   - "git-lfs"
   - "git-secret"
   - "global"
