@@ -4,7 +4,7 @@
 #
 # Copyright (c) 2018 {{domain}}. All rights reserved.
 #
-# Options 
+# Options
 set block-policy drop
 
 # Normalization
@@ -15,12 +15,37 @@ block in log all
 set skip on lo0
 pass out all keep state
 pass in proto icmp all
-pass in proto tcp to any port 22
-pass in proto tcp to any port 5901
-pass in proto tcp to any port 10022
-pass in proto udp to any port 500
-pass in proto udp to any port 4500
-pass in proto udp to any port 5901
-pass in proto udp to any port 60000
-pass in proto udp to any port 60022
+pass in proto udp to any port 53       # DNS
+pass in proto udp to any port 500      # IPSec
+pass in proto udp to any port 853      # DNS over TLS
+pass in proto udp to any port 1194     # OpenVPN
+pass in proto udp to any port 1701     # L2TP
+pass in proto udp to any port 4500     # IPSec
+pass in proto udp to any port 5353     # mDNS
+pass in proto udp to any port 5901     # VNC
+pass in proto udp to any port 6000     # X Window
+pass in proto udp to any port 6001     # X Window
+pass in proto udp to any port 7011     # UxPlay
+pass in proto udp to any port 51820    # WireGuard
+pass in proto udp to any port 60000    # mosh
+pass in proto udp to any port 60022    # mosh
+pass in proto tcp to any port 22       # SSH
+pass in proto tcp to any port 25       # SMTP
+pass in proto tcp to any port 53       # DNS
+pass in proto tcp to any port 80       # HTTP
+pass in proto tcp to any port 443      # HTTPS
+pass in proto tcp to any port 465      # Message Submission over TLS
+pass in proto tcp to any port 587      # Message Submission
+pass in proto tcp to any port 853      # DNS over TLS
+pass in proto tcp to any port 993      # IMAP over TLS
+pass in proto tcp to any port 995      # POP3 over TLS
+pass in proto tcp to any port 1194     # OpenVPN
+pass in proto tcp to any port 5901     # VNC
+pass in proto tcp to any port 6000     # X Window
+pass in proto tcp to any port 6001     # X Window
+pass in proto tcp to any port 7000     # UxPlay
+pass in proto tcp to any port 7001     # UxPlay
+pass in proto tcp to any port 7100     # UxPlay
+pass in proto tcp to any port 10022    # SSH alternative
+pass in proto tcp to any port 24800    # Barrier
 
