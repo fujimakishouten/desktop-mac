@@ -75,6 +75,7 @@ packages:
   - "w3m"
   - "whois"
   - "yubikey-personalization"
+  - "zellij"
   - "zsh-autosuggestions"
   - "zsh-completions"
   - "zstd"
