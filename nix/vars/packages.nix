@@ -1,0 +1,4 @@
+{ pkgs }: {
+    systemPackages = [];
+    pathsToLink = [];
+}
