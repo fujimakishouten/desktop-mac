@@ -8,6 +8,9 @@
                 };
             };
         };
+        pki = {
+            installCACerts = false;
+        };
     };
 }
 
