@@ -1,4 +1,6 @@
 { pkgs }: {
-    systemPackages = [];
+    systemPackages = [
+        pkgs.nix
+    ];
     pathsToLink = [];
 }
