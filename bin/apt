@@ -1,0 +1,105 @@
+#!/bin/sh
+
+# vim: set expandtab tabstop=4 shiftwidth=4 softtabstop=4:
+
+
+
+set -C
+
+
+BREW_COMMAND="brew"
+if [ -n "${SUDO_USER}" ]; then
+    BREW_COMMAND="sudo -u $SUDO_USER brew"
+fi
+
+COUNT=0
+for OPT in $(getopt v $@)
+do
+    case $OPT in
+        -v)
+            COUNT=$(expr $COUNT + 1)
+            ;;
+    esac
+done
+
+COMMAND=$1
+shift
+
+case "$COMMAND" in
+    autoclean)
+        $BREW_COMMAND cleanup $@
+        ;;
+    autoremove)
+        $BREW_COMMAND autoremove $@
+        ;;
+    full-upgrade)
+        $BREW_COMMAND upgrade --greedy $@
+        ;;
+    install)
+        CASK_OPTION=""
+        $BREW_COMMAND info --cask $@ > /dev/null 2>&1
+        if [ "$?" -eq 0 ]; then
+            CASK_OPTION="--cask"
+        fi
+        $BREW_COMMAND install $CASK_OPTION $@
+        ;;
+    purge)
+        $BREW_COMMAND uninstall $@
+        ;;
+    remove)
+        apt purge $@
+        ;;
+    search)
+        $BREW_COMMAND search $@
+        ;;
+    show)
+        $BREW_COMMAND info $@
+        ;;
+    update)
+        $BREW_COMMAND update $@
+        ;;
+    upgrade)
+        apt full-upgrade $@
+        ;;
+    moo)
+        case $COUNT in
+            0)
+                echo "There are no Easter Eggs in this program."
+                ;;
+            1)
+                echo "There really are no Easter Eggs in this program."
+                ;;
+            2)
+                echo "Didn't I already tell you that there are no Easter Eggs in this program?"
+                ;;
+            3)
+                echo "Stop it!"
+                ;;
+            4)
+                echo "Okay, okay, if I give you an Easter Egg, will you go away?"
+                ;;
+            5)
+                echo 'All right, you win.'
+                echo ''
+                echo '                               /----\'
+                echo '                       -------/      \'
+                echo '                      /               \'
+                echo '                     /                |'
+                echo '   -----------------/                  --------\'
+                echo '   ----------------------------------------------'
+                ;;
+            *)
+                echo "What is it?  It's an elephant being eaten by a snake, of course."
+                ;;
+        esac
+        ;;
+    esac
+
+
+
+# Local variables:
+# tab-width: 4
+# c-basic-offset: 4
+# c-hanging-comment-ender-p: nil
+# End:
+
