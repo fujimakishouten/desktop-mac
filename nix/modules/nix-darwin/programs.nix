@@ -1,13 +1,31 @@
 {
     programs = {
         bash = {
-            enable = true;
+            enable = false;
+            completion = {
+                enable = false;
+            };
         };
         fish = {
-            enable = true;
+            enable = false;
+            vendor = {
+                config = {
+                    enable = false;
+                };
+                completions = {
+                    enable = false;
+                };
+                functions = {
+                    enable = false;
+                };
+            };
         };
         zsh = {
-            enable = true;
+            enable = false;
+
+            enableCompletion = false;
+            enableBashCompletion = false;
+            enableGlobalCompInit = false;
         };
     };
 }
